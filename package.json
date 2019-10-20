@@ -1,0 +1,61 @@
+{
+  "name": "express-graphql-boilerplate",
+  "version": "0.0.1",
+  "description": "This is graphql apis using express",
+  "main": "server.js",
+  "scripts": {
+    "test": "NODE_ENV=test mocha $(find tests -name '*.spec.js') --recursive --exit",
+    "test:unit": "NODE_ENV=test mocha $(find tests/unit -name '*.spec.js') --recursive --exit",
+    "test:e2e": "NODE_ENV=test mocha $(find tests/e2e -name '*.spec.js') --recursive --exit",
+    "start": "NODE_ENV=production node src/server.js",
+    "lint": "./node_modules/.bin/eslint ./src",
+    "lint:fix": "./node_modules/.bin/eslint ./src --fix",
+    "predeploy": "NODE_ENV=production npm install",
+    "deploy": "NODE_ENV=production npm start",
+    "dev": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vijaykrishnavanshi/express-graphql-boilerplate.git"
+  },
+  "keywords": [
+    "graphql",
+    "express",
+    "node",
+    "mongodb"
+  ],
+  "author": "Vijay Krishnavanshi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vijaykrishnavanshi/express-graphql-boilerplate/issues"
+  },
+  "homepage": "https://github.com/vijaykrishnavanshi/express-graphql-boilerplate#readme",
+  "dependencies": {
+    "apollo-server-express": "^2.9.6",
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.19.0",
+    "bunyan": "^1.8.12",
+    "chai-http": "^4.3.0",
+    "express": "^4.17.1",
+    "dotenv": "^8.2.0",
+    "graphql": "^14.5.8",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.7.5",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "6.5.1",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-security": "^1.4.0",
+    "husky": "^3.0.9",
+    "mocha": "^6.2.2",
+    "nodemon": "^1.19.4",
+    "prettier": "^1.18.2"
+  },
+  "engines": {
+    "node": ">=8.3.0"
+  }
+}
