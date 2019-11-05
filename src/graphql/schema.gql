@@ -1,0 +1,16 @@
+const { gql } = require('apollo-server');
+
+module.exports = gql`
+type Query {
+    hello: String!
+}
+
+type Mutation {
+    greet(name: String!): String!
+}
+
+# uncomment the type Subscription if you need it
+# type Subscription {
+#     _empty: String
+# }
+`;

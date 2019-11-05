@@ -1,19 +1,17 @@
 const config = require('../config');
 const logger = require('./helpers/logger');
 const { ApolloServer } = require('apollo-server-express');
-const GraphQL = require('./graphql');
+const typeDefs = require('./graphql/schema.gql');
+const resolvers = require('./graphql/resolvers');
 const Models = require('./models');
-const Services = require('./services');
 const ErrorHandler = require('./helpers/errorHandler');
 
 const server = new ApolloServer({
-  typeDefs: GraphQL.typeDefs,
-  resolvers: GraphQL.resolvers,
-  schemaDirectives: GraphQL.schemaDirectives,
+  typeDefs,
+  resolvers,
   context: async ({ req }) => {
     return {
       Models,
-      Services,
       req,
     };
   },
